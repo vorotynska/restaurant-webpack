@@ -1,0 +1,115 @@
+/* src/styles.css */
+/* general styles */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #fff8f0;
+  margin: 0;
+  padding: 0;
+}
+
+/* apperance animation */
+
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* header and navigation */
+header {
+  background-color: #d62828;
+  padding: 1rem;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+nav button {
+  background-color: #f77f00;
+  border: none;
+  padding: 0.5rem 2rem;
+  color: waiter;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+nav button:hover {
+  background-color: #fcbf49;
+  color: #000;
+}
+
+/* styles navigation */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.burger {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: white;
+  display: none;
+  cursor: pointer;
+}
+
+/* content */
+#content {
+  padding: 0.5rem;
+  color: #003849;
+}
+
+#content p,
+#content li {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+#content img {
+  margin-top: 1rem;
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+/* adaptation for mobile devices */
+@media (max-width: 600px) {
+  .burger {
+    display: block;
+  }
+
+  nav {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1rem;
+    gap: 0.5rem;
+  }
+  nav.shou {
+    display: flex;
+  }
+
+  nav button {
+    width: 80%;
+    font-size: 1.1rem;
+  }
+
+  #content {
+    padding: 1rem;
+  }
+}

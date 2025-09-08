@@ -1,10 +1,10 @@
 // src/home.js
 import chaletImage from "./assets/images/background.jpg"
 export default function loadHome() {
-    const content = document.getElementById("content");
-    const homeDiv = document.createElement("div");
+  const content = document.getElementById("content");
+  const homeDiv = document.createElement("div");
 
-    homeDiv.innerHTML = `
+  homeDiv.innerHTML = `
     <div id="container-home" class="container-home">
       <div class="home__content">
         <div class="home__text">
@@ -19,5 +19,5 @@ export default function loadHome() {
       </div>
     </div>     
    `;
-    content.appendChild(homeDiv);
+  content.appendChild(homeDiv);
 }

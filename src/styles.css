@@ -106,7 +106,15 @@ nav button:hover {
 
 #content img {
   max-width: 100%;
-  border-radius: 50px;
+  height: auto;
+  border-radius: 20px;
+  object-fit: cover;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+#content img:hover {
+  transform: scale(1.02);
+  transition: transform 0.3s ease;
 }
 
 /* adaptation for mobile devices */
@@ -269,6 +277,7 @@ nav button:hover {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 2em;
  }
 
  .img-menu-container,
@@ -276,9 +285,24 @@ nav button:hover {
   width: 47%;
  }
 
- .price {
+ .menu-items {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2em; /* расстояние между блюдами */
   text-align: left;
- }
+}
+
+.menu-item h3 {
+  font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+  font-weight: 600;
+  margin: 0;
+}
+
+.menu-item p {
+  margin: 0.2em 0 0;
+  font-size: clamp(1rem, 2vw, 1.3rem);
+  opacity: 0.9;
+}
 
  .menu-title {
   text-align: center;
@@ -289,7 +313,6 @@ nav button:hover {
   /* font-style: normal; */
   font-size: clamp(2rem, 4vw, 5rem);
   text-shadow: 2px 2px 6px var(--shadow-dark);
-  /* margin-top: 1em; */
   line-height: 1.1;
  }
 
@@ -302,31 +325,19 @@ nav button:hover {
                -1px -1px 2px var(--shadow-gray);
  }
 
- .price-title {
-  margin-top: 1em;
-  font-size: clamp(1.2rem, 2.5vw, 1.6rem);
-  font-optical-sizing: auto;
- }
-
- .price-tect {
-  margin-top: 0.2em;
-  font-size: clamp(1rem, 2vw, 1.4rem);
-  font-optical-sizing: auto;
- }
-
  @media (max-width: 600px) {
   section {
     padding: 1em 0;
-    border-bottom: var(--color-light) inset 2px;
   }
 
   .section-content {
     flex-direction: column;
+    text-align: center;
   }
 
   .img-menu-container,
- .price {
-  width: 100%;
-  margin-bottom: 1.5em;
+  .price {
+    width: 100%;
+    margin-bottom: 1.5em;
  }
  }

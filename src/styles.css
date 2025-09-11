@@ -95,7 +95,8 @@ nav button:hover {
 /* content */
 #content {
   padding: 0;
-  color: #003849;
+  /* color: #003849; */
+  color: #1C261E;
 }
 
 #content p,
@@ -202,7 +203,7 @@ nav button:hover {
   position: relative;
   z-index: 2; /* приподнимаем над текстом */
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* лёгкая тень для объёма */
-  transform: translate(10%, -15%);
+  /* transform: translate(10%, -15%); */
 }
 
 #discount h3 {
@@ -268,7 +269,7 @@ nav button:hover {
 
  section {
   padding: 3em 0;
-  border-bottom: var(--color-light) inset 2px;
+  border-bottom: var(--color-light) solid 2px;
  }
 
  .section-content {
@@ -276,8 +277,9 @@ nav button:hover {
   padding: 2em 0;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   gap: 2em;
+  border: 2px solid salmon;
  }
 
  .img-menu-container,
@@ -341,3 +343,50 @@ nav button:hover {
     margin-bottom: 1.5em;
  }
  }
+
+  /* contact */
+  .contact {
+    padding: 2em 0;
+    line-height: 1.6;
+    text-align: center;
+  }
+
+  .contact__content {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    border: 2px solid red;
+  }
+
+ .contact-background {
+  background-color: #F0EAD6;
+  border-radius: 2em;
+ }
+
+ .title-container,
+ .items {
+  width: 47%;
+  border: 2px solid blue;
+}
+ .title-container #discount {
+  margin: 0 auto;
+ }
+
+ .items {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2em; /* расстояние между блюдами */
+  text-align: left;
+ }
+
+ .contact-svg {
+  width: 3em;
+  height: 3em;
+  background-color: var(--color-gold);
+  border-radius: 50%;
+ }
+
+ /* .row {
+  display: flex;
+  border: 2px solid blueviolet;
+ } */

@@ -1,4 +1,38 @@
 /* src/styles.css */
+
+/* Connecting fonts */
+@font-face {
+  font-family: "Roboto";
+  src: url("./assets/fonts/Roboto-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("./assets/fonts/Roboto-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Playfair Display";
+  src: url("./assets/fonts/PlayfairDisplay-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Playfair Display";
+  src: url("./assets/fonts/PlayfairDisplay-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* general styles */
 :root {
   /* Основные цвета */
@@ -16,7 +50,6 @@
   --font-main: "Roboto", sans-serif;
   --font-title: "Playfair Display", serif;
 }
-
 
 * {
   margin: 0;
@@ -373,7 +406,7 @@ nav button:hover {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 2em;
+  /* gap: 1em; */
  }
  
  .title-container,

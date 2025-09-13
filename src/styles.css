@@ -3,6 +3,7 @@
 :root {
   /* Основные цвета */
   --color-green: #07cf07;   /* акцентный зелёный */
+  --color-dark-green: #32402C;  /* for input */
   --color-gold: #cbbd39;    /* золотой для круга */
   --color-light: #d0f0c0;   /* светлый для подзаголовка */
   --color-dark: #1a1a1a;    /* фоновые тёмные оттенки */
@@ -25,7 +26,8 @@
 
 body {
   font-family: var(--font-main);
-  background-color: #fff8f0;
+  /* background-color: #fff8f0; */
+  background-color: #824936;
   margin: 0;
   padding: 0;
 }
@@ -143,7 +145,7 @@ nav button:hover {
 
 /* home */
 .container-home {
-  height: 90vh;
+  height: 100vh;
   background-image: url(./assets/images/background.jpg);
   background-size: cover;
   background-position: center;
@@ -269,7 +271,6 @@ nav button:hover {
 
  section {
   padding: 3em 0;
-  border-bottom: var(--color-light) solid 2px;
  }
 
  .section-content {
@@ -277,9 +278,8 @@ nav button:hover {
   padding: 2em 0;
   display: flex;
   align-items: center;
-  /* justify-content: space-between; */
+  justify-content: space-between;
   gap: 2em;
-  border: 2px solid salmon;
  }
 
  .img-menu-container,
@@ -319,7 +319,7 @@ nav button:hover {
  }
 
  .section-title {
-  font-size: clamp(1.5rem, 3vw, 3rem);
+  font-size: clamp(1.5rem, 3vw, 3.5rem);
   color: var(--color-light);
   font-family: var(--font-title);
   font-optical-sizing: auto;
@@ -355,38 +355,153 @@ nav button:hover {
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
-    border: 2px solid red;
   }
 
  .contact-background {
-  background-color: #F0EAD6;
+  background-color: #fff8f0;
+  box-shadow: 0 4px 20px var(--shadow-dark);
   border-radius: 2em;
+  padding: 2em;
  }
 
- .title-container,
- .items {
-  width: 47%;
-  border: 2px solid blue;
-}
- .title-container #discount {
+ .create-account {
   margin: 0 auto;
+  padding: 2em 0;
+ }
+
+ .personal-data {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2em;
+ }
+ 
+ .title-container,
+ .items,
+ .col {
+  width: 47%;
+  text-align: left;
+ }
+
+ label {
+    display: block;
+  } 
+
+  input,
+  #message {
+    font-family: inherit;
+    margin-bottom: 0.75em;
+    width: 100%;
+    font-size: clamp(1rem, 1.5vw, 1.1rem);
+    padding: 0.7em;
+    opacity: 0.9;
+    border: 1px solid var(--color-dark-green);
+    border-radius: 20px;
+    transform: scale(1);
+    transition: transform 250ms;
+  }
+
+ .btn {
+    display: inline;
+    font-size: clamp(1rem, 1.5vw, 1.1rem);
+    padding: 0.7em 2em;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: 0;
+    cursor: pointer;
+  }
+
+  .btn-submit {
+    margin-top: 1em;
+    background: var(--color-green);
+    box-shadow: 1px 2px var(--shadow-gray);
+    transform: scale(1);
+    transition: transform 250ms;
+  }
+
+  .btn-submit:hover,
+  .btn-submit:focus,
+  input:focus,
+  #message:focus {
+    transform:scale(1.05);
+  }
+
+ .message {
+  text-align: left;
+ }
+
+ .title-container #discount {
+  margin-left: 0;
+  margin-bottom: 4em;
  }
 
  .items {
   display: flex;
   flex-direction: column;
-  gap: 1.2em; /* расстояние между блюдами */
-  text-align: left;
+  gap: 1.2em;
+  /* text-align: left; */
  }
 
  .contact-svg {
-  width: 3em;
-  height: 3em;
+  width: 4em;
+  height: 4em;
   background-color: var(--color-gold);
   border-radius: 50%;
  }
 
- /* .row {
+ .row {
   display: flex;
-  border: 2px solid blueviolet;
- } */
+  gap: 2em;
+ } 
+
+ .item h3 {
+  font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+  font-weight: 600;
+  margin: 0;
+}
+
+ .item p,
+  label {
+  margin: 0.2em 0 0;
+  font-size: clamp(1rem, 1.6vw, 1.3rem);
+  opacity: 0.9;
+}
+
+@media (max-width: 600px) {
+
+  .title-container,
+  .items,
+  .col {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 1.5em;
+ }
+
+ .col {
+  width: 100%;
+  text-align: left;
+  margin-bottom: 1.5em;
+  /* gap: 1.2em; */
+ }
+
+ .row,
+ .personal-data {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+ } 
+ .contact-svg {
+  margin: 0 auto;
+ }
+
+ .title-container #discount {
+  margin: 2em auto;
+ }
+
+ .contact .section-title {
+  color: var(--color-dark);
+  text-shadow: 2px 2px 6px var(--shadow-dark);
+ }
+
+ }

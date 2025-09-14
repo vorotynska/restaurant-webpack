@@ -49,7 +49,29 @@
   /* Шрифты */
   --font-main: "Roboto", sans-serif;
   --font-title: "Playfair Display", serif;
+  
+   /* Размеры и интервалы */
+  --fs-title-lg: clamp(2.5rem, 4vw, 5rem);   /* крупные заголовки */
+  --fs-title-md: clamp(1.8rem, 3vw, 3.5rem); /* секционные заголовки */
+  --fs-body: clamp(1rem, 1.5vw, 1.2rem);     /* основной текст */
+
+  --lh-tight: 1.1;
+  --lh-normal: 1.4;
+  --lh-loose: 1.6;
+
+
+  /* Базовые межбуквенные интервалы */
+  --ls-main: 0.5px;   /* Roboto – нейтральный, читаемый */
+  --ls-title: 1.5px;  /* Playfair – чуть больше воздуха */
 }
+
+@media (max-width: 480px) {
+  :root {
+    --ls-title: 1px;
+    --ls-main: 0.3px;
+  }
+}
+
 
 * {
   margin: 0;
@@ -59,7 +81,9 @@
 
 body {
   font-family: var(--font-main);
-  /* background-color: #fff8f0; */
+  letter-spacing: var(--ls-main);
+  font-size: var(--fs-body);
+  line-height: var(--lh-loose);
   background-color: #824936;
   margin: 0;
   padding: 0;
@@ -130,12 +154,10 @@ nav button:hover {
 /* content */
 #content {
   padding: 0;
-  /* color: #003849; */
   color: #1C261E;
 }
 
-#content p,
-#content li {
+#content p {
   font-size: 1.1rem;
   line-height: 1.6;
 }
@@ -206,22 +228,26 @@ nav button:hover {
   font-family: var(--font-title);
   font-optical-sizing: auto;
   font-weight: 800;
-  /* font-style: normal; */
-  font-size: clamp(2.5rem, 8vw, 7rem);
+  font-size: clamp(3.5rem, 8vw, 7rem);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--ls-title);
   text-transform: uppercase;
   text-shadow: 2px 2px 6px var(--shadow-dark);
 }
 
 .title__home__text {
-  font-size: clamp(1.2rem, 3vw, 2rem);
+  font-size: clamp(1.6rem, 3vw, 2rem);
   color: var(--color-light);
   font-family: var(--font-main);
   font-optical-sizing: auto;
   text-shadow: 2px 2px 4px var(--shadow-dark),
                -1px -1px 2px var(--shadow-gray);
   font-style: italic;
+  line-height: var(--ls-main);
+  letter-spacing: var(--lh-normal);
   margin-bottom: 4em;
   margin-right: 1em;
+  margin-top: 1em;
 }
 
 #discount {
@@ -245,6 +271,8 @@ nav button:hover {
   margin-bottom: 0.4em;
   font-size: clamp(1.5rem, 4vw, 2.5rem);
   font-family: var(--font-title);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--ls-title);
   font-optical-sizing: auto;
 }
 
@@ -280,15 +308,11 @@ nav button:hover {
   }
 }
 
-.playfair-display {
-  font-family: "Playfair Display", serif;
-  font-optical-sizing: auto;
-  font-weight: 700;
-  font-style: normal;
-}
-
  /* menu */
  .menu {
+  background-image: url(./assets/images/brown-wooden.jpg);
+  background-size: cover;
+  background-position: center;
   background-color: #824936;
   color: #F3EED9;
   padding: 2em 0;
@@ -316,7 +340,7 @@ nav button:hover {
  }
 
  .img-menu-container,
- .price {
+ .menu-items {
   width: 47%;
  }
 
@@ -330,6 +354,7 @@ nav button:hover {
 .menu-item h3 {
   font-size: clamp(1.2rem, 2.5vw, 1.6rem);
   font-weight: 600;
+  line-height: var(--lh-normal);
   margin: 0;
 }
 
@@ -345,20 +370,24 @@ nav button:hover {
   font-family: var(--font-title);
   font-optical-sizing: auto;
   font-weight: 800;
-  /* font-style: normal; */
-  font-size: clamp(2rem, 4vw, 5rem);
+
+  font-size: var(--fs-title-lg);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--ls-title);
+
   text-shadow: 2px 2px 6px var(--shadow-dark);
-  line-height: 1.1;
- }
+}
 
  .section-title {
-  font-size: clamp(1.5rem, 3vw, 3.5rem);
+  font-size: clamp(1.8rem, 3.5vw, 3rem);
+  line-height: 1.6;
+  letter-spacing: 1.5px;
   color: var(--color-light);
   font-family: var(--font-title);
   font-optical-sizing: auto;
   text-shadow: 2px 2px 4px var(--shadow-dark),
                -1px -1px 2px var(--shadow-gray);
- }
+}
 
  @media (max-width: 600px) {
   section {
@@ -371,14 +400,26 @@ nav button:hover {
   }
 
   .img-menu-container,
-  .price {
+  .menu-items {
     width: 100%;
     margin-bottom: 1.5em;
  }
  }
 
+ @media (max-width: 480px) {
+  .section-title {
+    font-size: clamp(1.4rem, 5vw, 2rem);
+    line-height: 1.4;
+    letter-spacing: 1px;
+  }
+}
+
+
   /* contact */
   .contact {
+    background-image: url(./assets/images/brown-wooden.jpg);
+    background-size: cover;
+    background-position: center;
     padding: 2em 0;
     line-height: 1.6;
     text-align: center;
@@ -391,7 +432,7 @@ nav button:hover {
   }
 
  .contact-background {
-  background-color: #fff8f0;
+  background-color: #c4ae92;
   box-shadow: 0 4px 20px var(--shadow-dark);
   border-radius: 2em;
   padding: 2em;
@@ -409,8 +450,6 @@ nav button:hover {
   /* gap: 1em; */
  }
  
- .title-container,
- .items,
  .col {
   width: 47%;
   text-align: left;
@@ -464,6 +503,14 @@ nav button:hover {
   text-align: left;
  }
 
+ .title-container {
+  width: 36%;
+ }
+
+ .items {
+  width: 60%;
+ }
+
  .title-container #discount {
   margin-left: 0;
   margin-bottom: 4em;
@@ -477,10 +524,14 @@ nav button:hover {
  }
 
  .contact-svg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 4em;
   height: 4em;
   background-color: var(--color-gold);
   border-radius: 50%;
+  padding: 10px;
  }
 
  .row {
@@ -532,9 +583,4 @@ nav button:hover {
   margin: 2em auto;
  }
 
- .contact .section-title {
-  color: var(--color-dark);
-  text-shadow: 2px 2px 6px var(--shadow-dark);
- }
-
- }
+}

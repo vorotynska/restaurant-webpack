@@ -3,6 +3,7 @@ import "./styles.css"
 import loadContact from "./contact";
 import loadMenu from "./menu";
 import loadHome from "./home";
+import loadAbout from "./about";
 
 function clearContent() {
     const content = document.getElementById("content");
@@ -17,6 +18,11 @@ document.getElementById("homeBtn").addEventListener("click", () => {
 document.getElementById("menuBtn").addEventListener("click", () => {
     clearContent();
     loadMenu();
+});
+
+document.getElementById("aboutBtn").addEventListener("click", () => {
+    clearContent();
+    loadAbout();
 });
 
 document.getElementById("contactBtn").addEventListener("click", () => {

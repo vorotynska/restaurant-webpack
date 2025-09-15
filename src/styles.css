@@ -163,8 +163,8 @@ nav button:hover {
 }
 
 #content img {
-  max-width: 100%;
-  height: auto;
+  width: 100%;
+  aspect-ratio: 4 / 4;   /* одинаковое соотношение сторон */
   border-radius: 20px;
   object-fit: cover;
   box-shadow: 0 4px 8px rgba(0,0,0,0.3);
@@ -176,6 +176,12 @@ nav button:hover {
 }
 
 /* adaptation for mobile devices */
+@media (max-width: 768px) {
+  #content img {
+    aspect-ratio: 3 / 2;
+  }
+}
+
 @media (max-width: 600px) {
   .burger {
     display: block;
@@ -339,6 +345,15 @@ nav button:hover {
   gap: 2em;
  }
 
+ /* Контейнеры секций меню */
+ .menu__content .section-content {
+  background: rgba(0, 0, 0, 0.45); /* полупрозрачный тёмный фон */
+  border-radius: 20px;
+  padding: 1.5em;
+  margin: 1.5em 0;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.35);
+}
+
  .img-menu-container,
  .menu-items {
   width: 47%;
@@ -370,23 +385,27 @@ nav button:hover {
   font-family: var(--font-title);
   font-optical-sizing: auto;
   font-weight: 800;
-
   font-size: var(--fs-title-lg);
   line-height: var(--lh-tight);
   letter-spacing: var(--ls-title);
-
   text-shadow: 2px 2px 6px var(--shadow-dark);
+  /* text-shadow: 2px 2px 8px rgba(0,0,0,0.6); */
+  margin-bottom: 1em;
 }
 
  .section-title {
-  font-size: clamp(1.8rem, 3.5vw, 3rem);
-  line-height: 1.6;
-  letter-spacing: 1.5px;
+  font-size: clamp(1.8rem, 3.5vw, 3.2rem);
+  /* line-height: 1.6; */
+  /* letter-spacing: 1.5px; */
   color: var(--color-light);
   font-family: var(--font-title);
   font-optical-sizing: auto;
+  font-optical-sizing: auto;
+  line-height: var(--lh-loose);
+  letter-spacing: var(--ls-wide);
   text-shadow: 2px 2px 4px var(--shadow-dark),
                -1px -1px 2px var(--shadow-gray);
+  margin-bottom: 0.8em;
 }
 
  @media (max-width: 600px) {

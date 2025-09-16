@@ -1,5 +1,9 @@
 // src/menu.js
 import menuData from "./data/menuData.js";
+import {
+  renderButtonBackTop,
+  initBackToTop
+} from "./components/backTop.js";
 
 export default function loadMenu() {
   const content = document.getElementById("content");
@@ -39,11 +43,16 @@ export default function loadMenu() {
   `;
 
   menuDiv.innerHTML = `
+     <div id="top"></div> <!-- Якорь для прокрутки -->
     <h1 class="menu-title">Flavour so good you’ll try to eat with your eyes</h1>
     <div class="menu__content">
       ${menuData.map(renderSection).join("")}
+      ${renderButtonBackTop()}
     </div>
   `;
 
   content.appendChild(menuDiv);
+
+  // инициализируем поведение кнопки
+  initBackToTop();
 }

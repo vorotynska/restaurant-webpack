@@ -1,5 +1,6 @@
 // src/home.js
-import chaletImage from "./assets/images/background.jpg"
+
+
 export default function loadHome() {
   const content = document.getElementById("content");
   const homeDiv = document.createElement("div");

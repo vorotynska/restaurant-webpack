@@ -2,6 +2,10 @@
 import {
   renderContactInfo
 } from "./components/contactInfo.js";
+import {
+  renderButtonBackTop,
+  initBackToTop
+} from "./components/backTop.js";
 
 export default function loadContact() {
   const content = document.getElementById("content");
@@ -9,7 +13,9 @@ export default function loadContact() {
   contactDiv.className = "contact";
 
   contactDiv.innerHTML = `
+         <div id="top"></div> <!-- Якорь для прокрутки -->
         <div class="contact__content">
+        <div id="top"></div> <!-- Якорь для прокрутки -->
 
             <!-- Mail -->
           <section class="contact-us" id="mail">
@@ -37,7 +43,11 @@ export default function loadContact() {
           </section>
         
           ${renderContactInfo()};
+          ${renderButtonBackTop()}
         </div>
     `;
   content.appendChild(contactDiv);
+
+  // инициализируем поведение кнопки
+  initBackToTop();
 }

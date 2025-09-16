@@ -41,6 +41,7 @@
   --color-gold: #cbbd39;    /* золотой для круга */
   --color-light: #d0f0c0;   /* светлый для подзаголовка */
   --color-dark: #1a1a1a;    /* фоновые тёмные оттенки */
+  --pink: #ff3258;
 
   /* Тени */
   --shadow-dark: rgba(0, 0, 0, 0.8);
@@ -81,7 +82,9 @@
     --ls-main: 0.3px;
   }
 }
-
+html {
+  scroll-behavior: smooth;
+}
 
 * {
   margin: 0;
@@ -95,8 +98,7 @@ body {
   font-size: var(--fs-body);
   line-height: var(--lh-loose);
   background-color: #824936;
-  margin: 0;
-  padding: 0;
+  overflow-x: hidden;
 }
 
 /* apperance animation */
@@ -638,6 +640,13 @@ nav button:hover {
   margin: 1.5em 0;
   box-shadow: 0 4px 12px rgba(0,0,0,0.35);
 }
+
+ .about .mission {
+  font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+  font-weight: 600;
+  line-height: var(--lh-normal);
+  margin: 0;
+}
  
  .btn-read-more {
     margin-top: 1em;
@@ -653,8 +662,38 @@ nav button:hover {
   transform: scale(1.05);
   background: #d4af37; /* слегка темнее при наведении */
 }
-           
 
-       
+/* ----- Back to Top ----- */
 
-         
+.back-to-top {
+    position: fixed;
+    bottom: 4rem;
+    right: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 4.5rem;
+    width: 4.5rem;
+    background-color: var(--pink);
+    border-radius: 50%;
+    z-index: 10;
+    visibility: hidden;
+    transition: all .4s;
+  }
+
+@media(max-width: 900px) {
+    .back-to-top {
+        right: 2rem;
+        height: 4rem;
+        width: 4rem;
+    }
+}
+
+@media(max-width: 500px) {
+    .back-to-top {
+        right: 1rem;
+        height: 3rem;
+        width: 3rem;
+    }
+}
+

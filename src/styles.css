@@ -63,6 +63,16 @@
   /* Базовые межбуквенные интервалы */
   --ls-main: 0.5px;   /* Roboto – нейтральный, читаемый */
   --ls-title: 1.5px;  /* Playfair – чуть больше воздуха */
+
+   /* Радиусы */
+  --radius-lg: 20px;
+  --radius-xl: 2em;
+
+  /* padding */
+  --space-sm: 0.5em;
+  --space-md: 1em;
+  --space-lg: 2em;
+
 }
 
 @media (max-width: 480px) {
@@ -601,11 +611,10 @@ nav button:hover {
  .title-container #discount {
   margin: 2em auto;
  }
-
 }
 
- /* about */
- .about {
+/* about */
+.about {
   background-image: url(./assets/images/brown-wooden.jpg);
   background-size: cover;
   background-position: center;
@@ -629,11 +638,23 @@ nav button:hover {
   margin: 1.5em 0;
   box-shadow: 0 4px 12px rgba(0,0,0,0.35);
 }
-
+ 
  .btn-read-more {
     margin-top: 1em;
     background: var(--color-gold);
+    color: var(--color-dark);
     box-shadow: 1px 2px var(--shadow-gray);
     transform: scale(1);
     transition: transform 250ms;
-  }
+ }
+
+ .btn-read-more:hover,
+ .btn-read-more:focus {
+  transform: scale(1.05);
+  background: #d4af37; /* слегка темнее при наведении */
+}
+           
+
+       
+
+         

@@ -37,7 +37,7 @@ export function renderContactInfo() {
             <div class="item">
               <h3 class="item-title">Chart to us</h3>
               <p class="item-text">Our friendly team is here to help.</p>
-              <p class="item-text"><a href="#">hi@ourcompany.com</a></p>
+              <p class="item-text"><a href="#" class="link__text">hi@ourcompany.com</a></p>
             </div>
           </div>
           <div class="row">
@@ -68,7 +68,7 @@ export function renderContactInfo() {
               <div class="item">
                 <h3 class="item-title">Phone</h3>
                 <p class="item-text">Mon-Fri from 8am to 5am</p>
-                <p class="item-text"><a href="tel:+1555000000">+1 (555) 000-000</a></p>
+                <p class="item-text"><a href="tel:+1555000000" class="link__text">+1 (555) 000-000</a></p>
               </div>
           </div>
         </div>

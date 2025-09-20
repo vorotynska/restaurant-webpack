@@ -25,7 +25,7 @@ export default function loadAbout() {
               <h3 class="mission">${section.name}</h3>
               <h2 class="section-title">${section.title}</h2>
               <p>${section.desc}</p>
-              <a hef="#top" class="btn btn-read-more">Read More</a>
+              <a href="#top" class="btn btn-read-more">Read More</a>
             </div>
           `
           : `

@@ -45,7 +45,7 @@ export default function loadAbout() {
 
   aboutDiv.innerHTML = `
     <div class="about__content">
-    <div id="top"></div> <!-- Якорь для прокрутки -->
+    <div id="top"></div> <!-- Anchor for scrolling -->
       ${aboutData.map(renderSection).join("")}
       ${renderContactInfo()}
       ${renderButtonBackTop()}

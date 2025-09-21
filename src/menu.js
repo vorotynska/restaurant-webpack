@@ -10,6 +10,7 @@ export default function loadMenu() {
   const menuDiv = document.createElement("div");
   menuDiv.className = "menu";
 
+
   const renderItem = (item) => `
     <div class="menu-item">
       <h3 class="price-title">${item.name} $${item.price}</h3>

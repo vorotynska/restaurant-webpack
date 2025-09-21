@@ -23,12 +23,12 @@ export function initBackToTop() {
 export function renderButtonBackTop() {
   return `
     <a href="#top" class="back-to-top" title="Back to Top">
-      <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'>
-        <polyline points='112 244 256 100 400 244'
-          style='fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:24px'/>
-        <line x1='256' y1='120' x2='256' y2='412'
-          style='fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:24px'/>
-      </svg>
+        <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'>
+          <polyline points='112 244 256 100 400 244'
+            style='fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:24px'/>
+          <line x1='256' y1='120' x2='256' y2='412'
+            style='fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:24px'/>
+        </svg>
     </a>
   `;
 }

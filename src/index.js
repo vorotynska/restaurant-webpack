@@ -30,10 +30,21 @@ document.getElementById("contactBtn").addEventListener("click", () => {
     loadContact();
 });
 
-const nav = document.getElementById("nav");
-document.getElementById("burger").addEventListener("click", () => {
-    nav.classList.toggle("shou");
-});
+const nav = document.querySelector(".nav");
+const navToggle = document.querySelector(".mobile-nav-toggle");
+
+// click the hamburger button
+navToggle.addEventListener("click", () => {
+    const visibility = nav.getAttribute("data-visible");
+    if (visibility === "false") {
+        nav.setAttribute("data-visible", true)
+        navToggle.setAttribute("aria-expanded", true);
+    } else {
+        nav.setAttribute("data-visible", false);
+        navToggle.setAttribute("aria-expanded", false);
+    }
+})
+
 
 // load home page default
 loadHome();

@@ -120,7 +120,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: rgba(0, 0, 0, 0.6); /* полупрозрачный фон */
+  background: rgba(0, 0, 0, 0.6); /* translucent background */
   color: var(--color-light);
 }
 
@@ -131,12 +131,12 @@ header {
   letter-spacing: var(--ls-title);
 }
 
-/* Навигация */
+/* Navigation */
 .nav {
   display: flex;
   gap: var(--space-md);
   background: hsl( var(--clr-white) / 0.05);
-    backdrop-filter: blur(1.5rem);
+  backdrop-filter: blur(1.5rem);
 }
 
 .nav button {
@@ -148,29 +148,37 @@ header {
   text-transform: uppercase;
   letter-spacing: var(--ls-main);
   cursor: pointer;
-  transition: color 0.3s;
+  transition: color 0.3s ease, border-bottom-color 0.3s ease; /* 👈 плавность */
+  border-bottom: 2px solid transparent; /* чтобы линия не прыгала */
+  padding-bottom: 0.2rem;
 }
 
 .nav button:hover {
   color: var(--color-green);
 }
 
-  .mobile-nav-toggle {
-    display: none;
-  }
+.nav button.active {
+  color: var(--color-green);
+  font-weight: bold;
+  border-bottom: 2px solid var(--color-green);
+}
 
-/* 📱 Мобильная версия */
+
+.mobile-nav-toggle {
+  display: none;
+}
+
+/* Мобильная версия */
 @media (max-width: 768px) {
   .nav {
     position: fixed;
-        z-index: 1000;
-        inset: 0 0 0 30%;
-        list-style: none;
-        padding: min(20rem, 15vh) 2rem;
-        margin: 0;
-        flex-direction: column;
-        transform: translateX(100%);
-        transition: transform 500ms ease-in-out;
+    z-index: 1000;
+    inset: 0 0 0 35%;
+    padding: min(20rem, 15vh) 2rem;
+    margin: 0;
+    flex-direction: column;
+    transform: translateX(100%); /* default shift */
+    transition: transform 500ms ease-in-out;
     }
 
   .nav[data-visible="true"] {
@@ -206,6 +214,23 @@ header {
   }
 }
 
+/* Overlay to darken the background */
+.overlay {
+  position: fixed;
+  inset: 0; /* stretch to full screen */
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 300ms ease-in-out;
+  z-index: 900; /* below the menu, but above the content */
+}
+
+.overlay[data-visible="true"] {
+  opacity: 1;
+  pointer-events: auto; /* clickable only if active */
+}
+
+
 /* content */
 #content {
   padding: 0;
@@ -213,7 +238,7 @@ header {
 /* make images easier to work with */
 #content img {
   width: 100%;
-  aspect-ratio: 4 / 4;   /* одинаковое соотношение сторон */
+  aspect-ratio: 4 / 4;   /* same aspect ratio */
   border-radius: 20px;
   object-fit: cover;
   box-shadow: 0 4px 8px rgba(0,0,0,0.3);
@@ -379,7 +404,7 @@ header {
  .menu__content .section-content,
  .about__content .section-content {
   background: rgba(0, 0, 0, 0.45); /* полупрозрачный тёмный фон */
-  backdrop-filter: blur(1.5rem);
+  backdrop-filter: blur(1.2rem);
   border-radius: 20px;
   padding: 1.5em;
   margin: 1.5em 0;
@@ -540,7 +565,7 @@ a:hover {
   width: 0%;
 }
 
- /* menu */
+ /* menu page */
  .menu {
   color: #F3EED9;
  }

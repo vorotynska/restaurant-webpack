@@ -12,34 +12,56 @@ function clearContent() {
 
 const nav = document.querySelector(".nav");
 const navToggle = document.querySelector(".mobile-nav-toggle");
+const overlay = document.getElementById("overlay");
 
-// функция закрытия меню
+// Menu close function
 function closeNav() {
     nav.setAttribute("data-visible", false);
     navToggle.setAttribute("aria-expanded", false);
+    overlay.setAttribute("data-visible", false);
 }
 
+// Meny open function
+function openNav() {
+    nav.setAttribute("data-visible", true);
+    navToggle.setAttribute("aria-expanded", true);
+    overlay.setAttribute("data-visible", true); // ← показать overlay
+}
+
+// Active button backlight function
+function setActive(buttonId) {
+    document.querySelectorAll(".nav button").forEach(btn => {
+        btn.classList.remove("active");
+    });
+    document.getElementById(buttonId).classList.add("active");
+}
+
+// Handlers for buttons
 document.getElementById("homeBtn").addEventListener("click", () => {
     clearContent();
     loadHome();
+    setActive("homeBtn");
     closeNav();
 });
 
 document.getElementById("menuBtn").addEventListener("click", () => {
     clearContent();
     loadMenu();
+    setActive("menuBtn");
     closeNav();
 });
 
 document.getElementById("aboutBtn").addEventListener("click", () => {
     clearContent();
     loadAbout();
+    setActive("aboutBtn");
     closeNav();
 });
 
 document.getElementById("contactBtn").addEventListener("click", () => {
     clearContent();
     loadContact();
+    setActive("contactBtn");
     closeNav();
 });
 
@@ -47,12 +69,14 @@ document.getElementById("contactBtn").addEventListener("click", () => {
 navToggle.addEventListener("click", () => {
     const visibility = nav.getAttribute("data-visible");
     if (visibility === "false") {
-        nav.setAttribute("data-visible", true);
-        navToggle.setAttribute("aria-expanded", true);
+        openNav();
     } else {
         closeNav();
     }
 });
+
+// click the overlay (close menu)
+overlay.addEventListener("click", closeNav);
 
 // close when clicking outside the menu
 document.addEventListener("click", (e) => {

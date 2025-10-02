@@ -65,7 +65,7 @@ document.getElementById("contactBtn").addEventListener("click", () => {
     closeNav();
 });
 
-// click the hamburger button
+// Click the hamburger button
 navToggle.addEventListener("click", () => {
     const visibility = nav.getAttribute("data-visible");
     if (visibility === "false") {
@@ -75,10 +75,10 @@ navToggle.addEventListener("click", () => {
     }
 });
 
-// click the overlay (close menu)
+// Click the overlay (close menu)
 overlay.addEventListener("click", closeNav);
 
-// close when clicking outside the menu
+// Close when clicking outside the menu
 document.addEventListener("click", (e) => {
     const isNavOpen = nav.getAttribute("data-visible") === "true";
     if (
@@ -90,5 +90,5 @@ document.addEventListener("click", (e) => {
     }
 });
 
-// load home page default
+// Load home page default
 loadHome();

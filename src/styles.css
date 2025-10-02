@@ -232,9 +232,7 @@ header {
 
 
 /* content */
-#content {
-  padding: 0;
-}
+
 /* make images easier to work with */
 #content img {
   width: 100%;

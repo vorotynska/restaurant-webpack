@@ -1,0 +1,32 @@
+<!-- src/template.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Restaurant Page</title>
+<script defer src="main.js"></script></head>
+
+<body>
+  <header>
+    <div class="logo">My Restaurant</div>
+    <!-- <button type="button" class="mobile-nav-toggle" id="burger">&#9776;</button> -->
+    <button id="mobile-nav-toggle" aria-controls="nav" aria-expanded="false" class="mobile-nav-toggle"><span class="sr-only">
+      Menu</span>
+    </button>
+
+    <nav id="nav" class="nav" data-visible="false">
+      <button type="button" id="homeBtn">Home</button>
+      <button type="button" id="menuBtn">Menu</button>
+      <button type="button" id="aboutBtn">About</button>
+      <button type="button" id="contactBtn">Contact</button>
+      </div>
+    </nav>
+    <!--  light background-darkening (overlay)  -->
+    <div id="overlay" class="overlay" data-visible="false"></div>
+  </header>
+  <div id="content"></div>
+</body>
+
+</html>
